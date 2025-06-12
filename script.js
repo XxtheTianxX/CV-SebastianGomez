@@ -11,11 +11,29 @@ document.addEventListener("DOMContentLoaded", () => {
 // Inicializar animaciones AOS
 AOS.init();
 
-// Alternar modo oscuro
-const toggle = document.getElementById("toggle-dark");
-toggle.addEventListener("click", () => {
-  document.documentElement.classList.toggle("dark");
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("toggle-dark");
+  const html = document.documentElement;
+
+  // Aplicar tema guardado al cargar
+  if (localStorage.getItem("theme") === "dark") {
+    html.classList.add("dark");
+    toggle.innerText = "☀️"; // modo claro
+  } else {
+    toggle.innerText = "🌙"; // modo oscuro
+  }
+
+  toggle.addEventListener("click", () => {
+    const isDark = html.classList.toggle("dark");
+
+    // Cambiar icono
+    toggle.innerText = isDark ? "☀️" : "🌙";
+
+    // Guardar en localStorage
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  });
 });
+
 
 // Esperar a que el DOM esté cargado
 window.addEventListener("DOMContentLoaded", () => {
