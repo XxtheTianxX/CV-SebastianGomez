@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hoja de Vida - Sebastian Gomez Perea</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.ico" />
+
+    <!-- Tailwind CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <!-- Cubing.js CDN -->
+    <script src="https://cdn.cubing.net/js/cubing@0.5.0"></script>
+    <link rel="stylesheet" href="https://cdn.cubing.net/css/cubing@0.5.0" />
+
+    <!-- AOS Animaciones -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css" />
+    
+  </head>
+  <body class="bg-gray-100 text-gray-800 font-sans dark:bg-gray-900 dark:text-gray-100">
+
+    <!-- NAVBAR -->
+    <nav class="bg-white shadow sticky top-0 z-50 dark:bg-gray-800">
+      <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+        <a href="#inicio" class="text-xl font-bold text-blue-600">SebasGP.dev</a>
+        <div class="space-x-4">
+          <a href="#sobre-mi" class="hover:text-blue-500">Sobre mí</a>
+          <a href="#habilidades" class="hover:text-blue-500">Habilidades</a>
+          <a href="#proyectos" class="hover:text-blue-500">Proyectos</a>
+          <a href="#educacion" class="hover:text-blue-500">Educación</a>
+          <a href="#contacto" class="hover:text-blue-500">Contacto</a>
+          <button id="toggle-dark" class="bg-gray-200 text-sm px-2 py-1 rounded hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600">
+            🌙
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="bg-white shadow p-6 text-center" data-aos="fade-down">
+      <h1 class="text-3xl font-bold">Sebastian Gomez Perea</h1>
+      <p class="text-lg mt-2">Aspirante a Desarrollador de Software</p>
+      <div class="mt-4 space-x-4">
+        <a href="#" class="text-blue-600 hover:underline">GitHub</a>
+        <a href="#" class="text-blue-600 hover:underline">LinkedIn</a>
+        <a href="mailto:sebastiangomezpe@gmail.com" class="text-blue-600 hover:underline">Email</a>
+      </div>
+    </header>
+
+    <!-- SECCIONES -->
+    <section id="sobre-mi" class="p-6 max-w-4xl mx-auto" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold mb-2">Sobre mí</h2>
+      <p>
+        Soy estudiante de desarrollo de software apasionado por la tecnología, la resolución de problemas y el aprendizaje constante.
+      </p>
+    </section>
+
+    <section id="habilidades" class="p-6 max-w-4xl mx-auto" data-aos="fade-down">
+      <h2 class="text-2xl font-semibold mb-2">Habilidades Técnicas</h2>
+      <ul class="list-disc list-inside grid grid-cols-2 md:grid-cols-3 gap-y-1">
+        <li>HTML, CSS, Tailwind</li>
+        <li>JavaScript</li>
+        <li>React</li>
+        <li>Firebase</li>
+        <li>Git / GitHub</li>
+      </ul>
+    </section>
+
+    <section class="p-6 max-w-4xl mx-auto" data-aos="fade-down">
+      <h2 class="text-2xl font-semibold mb-2">Proyectos Destacados</h2>
+
+      <div class="bg-white shadow rounded-lg p-4 mb-4">
+        <h3 class="text-xl font-bold">Sistema de Gestión Energética</h3>
+        <p class="text-sm text-gray-600">Kotlin, Firebase, Android Studio</p>
+        <p>Aplicación que permite monitorear el consumo energético en hogares inteligentes, con alertas y control de dispositivos.</p>
+      </div>
+
+      <div class="bg-white shadow rounded-lg p-4">
+        <h3 class="text-xl font-bold">Tienda Online Dropshipping</h3>
+        <p class="text-sm text-gray-600">Kotlin, Firebase</p>
+        <p>Aplicación móvil de e-commerce con carrito de compras, autenticación de usuarios y métodos de pago.</p>
+      </div>
+    </section>
+    
+    <section id="rubik" class="p-6 max-w-4xl mx-auto text-center" data-aos="fade-up">
+  <h2 class="text-2xl font-semibold mb-4">¿Te gusta resolver problemas?</h2>
+  <p class="mb-4">Así como un cubo Rubik, me encanta enfrentar desafíos y buscar soluciones eficientes.</p>
+
+  <div class="flex justify-center">
+    <cubing-player puzzle="3x3x3" style="width: 300px; height: 300px;"></cubing-player>
+  </div>
+</section>
+
+
+    <section id="educacion" class="p-6 max-w-4xl mx-auto" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold mb-2">Educación</h2>
+      <p><strong>Institución Universitaria Digital de Antioquia</strong> – Estudiante de tecnología en Desarrollo de Software</p>
+      <p><strong>Institución Educativa Lola González</strong> – Bachiller Media tecnica en Informatica</p>
+    </section>
+
+    <section id="contacto" class="p-6 max-w-4xl mx-auto" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold mb-2">Contacto</h2>
+      <p>📧 sebastiangomezpe@gmail.com</p>
+      <p link="https://wa.link/n9dkba ">📱 3136666579</p>
+      <p>🌐 GitHub | LinkedIn</p>
+    </section>
+
+    <footer class="text-center text-sm text-gray-500 p-4">
+      &copy; 2025 SebasGP. Todos los derechos reservados.
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
+
