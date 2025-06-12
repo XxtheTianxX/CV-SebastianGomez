@@ -7,15 +7,21 @@ toggle.addEventListener("click", () => {
   document.documentElement.classList.toggle("dark");
 });
 
+// Esperar a que el DOM esté cargado
 window.addEventListener("DOMContentLoaded", () => {
+  // Inicializar cubing.js si está disponible (aunque ahora no sirve porque está caído)
   if (window.cubing && cubing.defineCustomElements) {
     cubing.defineCustomElements();
   } else {
-    console.error("Cubing.js no cargó correctamente.");
+    console.warn("Cubing.js no cargó correctamente o está temporalmente fuera de línea.");
   }
-});
 
+  // === Cubo Rubik con Three.js ===
   const container = document.getElementById("rubik-cube");
+  if (!container) {
+    console.warn("Elemento #rubik-cube no encontrado.");
+    return;
+  }
 
   // Escena
   const scene = new THREE.Scene();
@@ -63,3 +69,4 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   animate();
+});
