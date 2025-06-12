@@ -14,3 +14,52 @@ window.addEventListener("DOMContentLoaded", () => {
     console.error("Cubing.js no cargó correctamente.");
   }
 });
+
+  const container = document.getElementById("rubik-cube");
+
+  // Escena
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+  const renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setSize(container.clientWidth, container.clientHeight);
+  container.appendChild(renderer.domElement);
+
+  // Iluminación
+  const light = new THREE.AmbientLight(0xffffff); // luz blanca
+  scene.add(light);
+
+  // Crear cubo Rubik como una agrupación de 27 cubitos
+  const cubeGroup = new THREE.Group();
+  const colors = [0xff0000, 0x00ff00, 0x0000ff, 0xffff00, 0xffffff, 0xffa500]; // rojo, verde, azul, amarillo, blanco, naranja
+
+  for (let x = -1; x <= 1; x++) {
+    for (let y = -1; y <= 1; y++) {
+      for (let z = -1; z <= 1; z++) {
+        const geometry = new THREE.BoxGeometry(0.9, 0.9, 0.9);
+        const materials = [
+          new THREE.MeshBasicMaterial({ color: colors[0] }),
+          new THREE.MeshBasicMaterial({ color: colors[1] }),
+          new THREE.MeshBasicMaterial({ color: colors[2] }),
+          new THREE.MeshBasicMaterial({ color: colors[3] }),
+          new THREE.MeshBasicMaterial({ color: colors[4] }),
+          new THREE.MeshBasicMaterial({ color: colors[5] }),
+        ];
+        const cube = new THREE.Mesh(geometry, materials);
+        cube.position.set(x, y, z);
+        cubeGroup.add(cube);
+      }
+    }
+  }
+
+  scene.add(cubeGroup);
+  camera.position.z = 5;
+
+  // Animación
+  function animate() {
+    requestAnimationFrame(animate);
+    cubeGroup.rotation.x += 0.01;
+    cubeGroup.rotation.y += 0.01;
+    renderer.render(scene, camera);
+  }
+
+  animate();
