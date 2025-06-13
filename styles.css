@@ -1,10 +1,56 @@
-/* Scroll suave para navegacion */
+
+
+/* Scroll suave para navegación */
 html {
-    scroll-behavior: smooth;
-  }
-  
-  /* Personalizaciones adicionales (opcional) */
-  body {
-    transition: background-color 0.3s, color 0.3s;
-  }
-  
+  scroll-behavior: smooth;
+}
+
+/* Transición suave entre colores (modo oscuro/claro) */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Transiciones para contenedores y tarjetas */
+section,
+nav,
+footer,
+header,
+div,
+button,
+a {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Mejoras en la tipografía (puedes personalizar) */
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Oscurecer enlaces en modo oscuro */
+.dark a {
+  color: #60a5fa; /* azul claro */
+}
+
+/* Mejora la apariencia de los botones en modo oscuro */
+.dark button {
+  background-color: #374151;
+  color: #f3f4f6;
+}
+
+/* Estilo para la sección de proyectos en modo oscuro */
+.dark .project-card {
+  background-color: #1f2937;
+  color: #f9fafb;
+}
+
+/* Cambiar el color del scroll en navegadores compatibles */
+body::-webkit-scrollbar {
+  width: 8px;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 100, 100, 0.4);
+  border-radius: 4px;
+}
+body::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(100, 100, 100, 0.6);
+}
